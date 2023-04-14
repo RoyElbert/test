@@ -1,0 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class RegistrationPage {
+    private static Map<String, String> users = new HashMap<>();
+
+    public static void registerUser() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your email: ");
+        String email = scanner.nextLine();
+        if (users.containsKey(email)) {
+            System.out.println("User already exists!");
+            return;
+        }
+        System.out.print("Enter your password: ");
+        String password = scanner.nextLine();
+        users.put(email, password);
+        System.out.println("User registered successfully!");
+    }
+}
